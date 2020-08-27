@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title> NewsBot </title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript for Materialize CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/materialize.css' %}" />
+    <link href="{% static 'main/css/style.css' %}" rel="stylesheet" />
+
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo"> News Bot</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Nav Link 1</a></li>
+            <li><a href="/">Nav Link 2</a></li>
+        </ul>
+    </div>
+</nav>
+{% block content %}
+{% endblock %}
+</body>
