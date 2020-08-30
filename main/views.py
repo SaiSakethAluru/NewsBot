@@ -23,8 +23,9 @@ def get_top_articles():
 
 
 def homepage(request):
-    get_top_articles()
     global news_articles
+    if len(news_articles)==0:
+        get_top_articles()
     return render(request=request,
                   template_name='main/home.html',
                   context={'news_articles': news_articles})
@@ -35,3 +36,5 @@ def read_page(request):
     return render(request=request,
                   template_name='main/read.html',
                   context={'news_articles': news_articles})
+
+
