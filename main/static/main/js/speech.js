@@ -1,7 +1,7 @@
 function say(m) {
     var msg = new SpeechSynthesisUtterance();
     var voices = window.speechSynthesis.getVoices();
-    msg.voice = voices[33];
+    // msg.voice = voices[33];
     msg.voiceURI = "native";
     msg.volume = 4;
     msg.rate = 1;
