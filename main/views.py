@@ -22,11 +22,9 @@ def get_top_articles():
                                        article_source=article['source']['name'])
             news_articles.append(article_obj)
 
-
 def homepage(request):
     global news_articles
-    if len(news_articles)==0:
-        get_top_articles()
+    get_top_articles()
     return render(request=request,
                   template_name='main/home.html',
                   context={'news_articles': news_articles})
