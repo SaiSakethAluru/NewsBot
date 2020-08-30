@@ -1,6 +1,7 @@
 {% extends 'main/header.html' %}
 
 {% block content %}
+    <div class="row">
     {% for article in news_articles %}
         <a href = {{article.article_url}} target="_blank">
                 <div class="col s12 m12 l12">
@@ -17,4 +18,5 @@
             read_func('{{article.article_title|escapejs}}');
         </script>
     {% endfor %}
+    </div>
 {% endblock %}
