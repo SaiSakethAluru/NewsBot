@@ -17,7 +17,8 @@
         <a href="#" class="brand-logo"> News Bot</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
-            <li><a href="/">Nav Link 1</a></li>
+            <li><a onclick="read_func(news_articles)"> Read</a></li> 
+            <!-- href="/" -->
             <li><a href="/">Nav Link 2</a></li>
         </ul>
     </div>
@@ -25,3 +26,30 @@
 {% block content %}
 {% endblock %}
 </body>
+
+<script type="text/javascript">
+
+function say(m) {
+  var msg = new SpeechSynthesisUtterance();
+  var voices = window.speechSynthesis.getVoices();
+  msg.voice = voices[10];
+  msg.voiceURI = "native";
+  msg.volume = 4;
+  msg.rate = 1;
+  msg.pitch = 0.8;
+  msg.text = m;
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+
+function read_func(news_articles) {
+    // play audio
+    // say('Hello world');
+    var i;
+    for (i = 0; i < news_articles.length; i++) { 
+        say(news_articles[i].article_title);
+        // say('Hello world');
+    }
+}
+
+</script>
