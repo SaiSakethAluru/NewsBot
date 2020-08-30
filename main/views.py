@@ -11,6 +11,7 @@ def get_top_articles():
     api = NewsApiClient('fc8e2ae2cdaf489c9bc80e52c8d7d2f4')
     articles = api.get_top_headlines()
     global news_articles
+    news_articles = []
     if articles['status'] == 'ok':
         for i in range(10):
             article = articles['articles'][i]

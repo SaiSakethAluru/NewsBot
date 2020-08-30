@@ -13,6 +13,13 @@
     <script type="text/javascript" src="{% static 'main/js/util.js' %}"></script>
 
 </head>
+
+<!-- <script type="text/javascript">
+$(document).ready(function() {
+    $('select').material_select();
+});
+</script> -->
+
 <body>
 <nav>
     <div class="nav-wrapper">
@@ -20,10 +27,30 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
             <li><a href="/read"> Read</a></li>
-            <li><a href="/">Nav Link 2</a></li>
+            <!-- <li><a href="/">Nav Link 2</a></li> -->
+            
+
         </ul>
     </div>
 </nav>
+
+<select name="country" class="browser-default" id="country" style="width: 200px;">
+    <option value="" disabled selected>Choose your country</option>
+    <option value="in">India</option>
+    <option value="us">US</option>
+    <option value="ru">Russia</option>
+</select>
+
+<select name="category" class="browser-default" id="category" style="width: 200px;">
+    <option value="" disabled selected>Choose your category</option>
+    <option value="business">Business</option>
+    <option value="entertainment">Entertainment</option>
+    <option value="general">General</option>
+</select>
+<input type="submit" value="Submit">
+
+
+
 {% block content %}
 {% endblock %}
 </body>
