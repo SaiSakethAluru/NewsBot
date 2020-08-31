@@ -1,19 +1,22 @@
 {% extends 'main/header.html' %}
 
 {% block content %}
-    <div class="row">
-        {% for article in news_articles %}
-            <a href = {{article.article_url}} target="_blank">
-                <div class="col s12 m12 l12">
-                    <div class="card blue-grey darken-1">
-                        <div class="card-content white-text">
-                            <span class="card-title">{{article.article_title}}</span>
-                            <p> {{article.article_content | safe}} </p>
-                            <p> {{article.article_source}}, {{article.article_date}} </p>
-                        </div>
-                    </div>
+<script>
+    speechSynthesis.cancel();
+</script>
+<div class="row">
+    {% for article in news_articles %}
+    <a href = {{article.article_url}} target="_blank">
+        <div class="col s12 m12 l12">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">{{article.article_title}}</span>
+                    <p> {{article.article_content | safe}} </p>
+                    <p> {{article.article_source}}, {{article.article_date}} </p>
                 </div>
-            </a>
-        {% endfor %}
-    </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
 {% endblock %}
